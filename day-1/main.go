@@ -100,19 +100,14 @@ func stringToKeyword(s string) []Keyword {
 }
 
 func main() {
-	d1, err := os.ReadFile("input_part1.txt")
+	d, err := os.ReadFile("input.txt")
 	if err != nil {
 		fmt.Println("Error reading file:", err)
 		return
 	}
-	d2, err := os.ReadFile("input_part2.txt")
-	if err != nil {
-		fmt.Println("Error reading file:", err)
-		return
-	}
-	k1 := stringToKeyword(string(d1))
+	k1 := stringToKeyword(string(d))
 	ka := Keyword{}
-	k2 := stringToKeyword(string(d2))
+	k2 := stringToKeyword(string(d))
 
 	password1 := ka.Clocking(k1)
 	fmt.Printf("Password: %d\n", password1)
